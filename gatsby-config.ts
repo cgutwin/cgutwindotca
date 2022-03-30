@@ -27,6 +27,22 @@ const config: GatsbyConfig = {
       },
       // @ts-ignore
       __key: "pages"
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Inter']
+        }
+      }
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/ // See below to configure properly
+        }
+      }
     }
   ]
 }
