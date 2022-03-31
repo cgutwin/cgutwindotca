@@ -7,6 +7,9 @@ import flexy from "../styles/mixins/flexy"
 import GithubDark from "../images/social/github.svg"
 import "../styles/index.css"
 import "../styles/typography.css"
+import InjectTheme from "../components/InjectTheme"
+import GlobalStyle from "../styles/GlobalStyle"
+import { lightTheme } from "../styles/themes"
 
 const IndexPage = () => {
   return (
@@ -82,10 +85,10 @@ const IndexPage = () => {
 }
 
 const ProjectsSection = styled.section`
-  @media screen and (min-width:540px){
-    flex-direction: row!important;
+  @media screen and (min-width: 540px) {
+    flex-direction: row !important;
   }
-  
+
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -127,4 +130,11 @@ const Tag = styled.li`
   list-style: none;
 `
 
-export default IndexPage
+export default () => {
+  return (
+    <InjectTheme initialTheme={lightTheme}>
+      <GlobalStyle/>
+      <IndexPage/>
+    </InjectTheme>
+  )
+}
