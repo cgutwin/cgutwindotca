@@ -22,17 +22,17 @@ const config: GatsbyConfig = {
     }, {
       resolve: "gatsby-source-filesystem",
       options: {
-        "name": "pages",
-        "path": "./src/pages/"
+        "name": "projects",
+        "path": "projects"
       },
       // @ts-ignore
-      __key: "pages"
+      __key: "projects"
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Inter']
+          families: [ "Inter" ]
         }
       }
     },
